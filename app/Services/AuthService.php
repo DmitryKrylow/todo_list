@@ -53,19 +53,4 @@ class  AuthService
         Auth::logout();
         return redirect()->route('login');
     }
-
-    public function user(Request $request) {
-        $user = $request->user();
-        return response()->json([
-            'id' => $user->id,
-            'name' => $user->name,
-            'email' => $user->email,
-        ]);
-    }
-    public function users(Request $request)
-    {
-        return response()->json([
-            'users' => User::all()
-        ]);
-    }
 }
